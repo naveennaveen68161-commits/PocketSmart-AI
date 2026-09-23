@@ -1,5 +1,5 @@
 import google.generativeai as genai
-genai.configure(api_key="YOUR_GEMINI_API_KEY")
+genai.configure(api_key="AQ.Ab8RN6IQVNRI_LlnHNFhr1HcOCo4okVXv73I6xH-ZDqe8cH07A")
 
 def analyze_budget(income, expenses, goals):
     model = genai.GenerativeModel('gemini-3.6-flash')
