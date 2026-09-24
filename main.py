@@ -1,5 +1,7 @@
 import google.generativeai as genai
-genai.configure(api_key="AQ.Ab8RN6IQVNRI_LlnHNFhr1HcOCo4okVXv73I6xH-ZDqe8cH07A")
+API_KEY = "AQ.Ab8RN6J6mpOzh5g_P_-WOfhb3uUzblVRM3YXbHRWuBGsgXOSMg"
+
+genai.configure(api_key=API_KEY)
 
 def analyze_budget(income, expenses, goals):
     model = genai.GenerativeModel('gemini-3.6-flash')
@@ -7,8 +9,8 @@ def analyze_budget(income, expenses, goals):
     prompt = f"""
     You are PocketSmart AI, a smart budget and financial recommendation assistant.
     Analyze the following financial details:
-    - Monthly Income: ₹{income}
-    - Total Monthly Expenses: ₹{expenses}
+    - Monthly Income: Rs.{income}
+    - Total Monthly Expenses: Rs.{expenses}
     - Financial Goal / Notes: {goals}
 
     Provide a clear and structured response containing:
@@ -17,16 +19,26 @@ def analyze_budget(income, expenses, goals):
     3. Expense Optimization Advice based on their goal
     """
     
-    print("Analyzing budget and generating recommendations...\n")
+    print("\nAnalyzing budget and generating recommendations...\n")
     response = model.generate_content(prompt)
     return response.text
 
 if __name__ == "__main__":
-    print("=== PocketSmart AI: Smart Budget Assistant ===")
+    print("==================================================")
+    print("   PocketSmart AI: Smart Budget Assistant   ")
+    print("==================================================\n")
+    
     income = input("Enter Monthly Income (in Rs): ")
     expenses = input("Enter Monthly Expenses (in Rs): ")
     goals = input("Enter your financial goal: ")
     
-    result = analyze_budget(income, expenses, goals)
-    print("\n=== SMART BUDGET ANALYSIS ===\n")
-    print(result)
+    try:
+        result = analyze_budget(income, expenses, goals)
+        print("==================================================")
+        print("           SMART BUDGET ANALYSIS                  ")
+        print("==================================================\n")
+        print(result)
+        print("\n==================================================")
+    except Exception as e:
+        print("\nError occurred:", e)
+        print("Check your API Key! It must start with 'AIzaSy...'")
