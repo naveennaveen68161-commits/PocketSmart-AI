@@ -4,10 +4,11 @@ PocketSmart AI is a Python-based personal financial assistant powered by Google 
 
 #Team Details 
 
-Team Leader : Naveen M
-Team member : Boopathi T
-Team member : Jenson G
-Team member : Vaiju D
-Team member : Kannan P
+
+*Member 1:Naveen M(Team lead)
+*Member 2:Boooathi T
+*Member 3:Vaiju T
+*Member 4:Jenson G
+
 ## Demo Video
 * [Watch Demo Video on Google Drive](https://drive.google.com/file/d/17Tmfw40s1tIhHeeKPv5xKelnL55dpvSL/view?usp=drivesdk)
